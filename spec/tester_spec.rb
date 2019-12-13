@@ -7,6 +7,11 @@ describe('#Tester') do
     expect(tester.anagram_test).to(eq("These are anagrams"))
   end
 
+  it('should return "Please only enter real words" when given non words') do
+    tester = Tester.new('Welcome to the jungle', 'Pleoase come over for tea')
+    expect(tester.anagram_test).to(eq("Please only enter real words"))
+  end
+
   it('should ignore case') do
     tester = Tester.new('Eat', 'Tea')
     expect(tester.anagram_test).to(eq("These are anagrams"))
