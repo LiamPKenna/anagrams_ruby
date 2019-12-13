@@ -1,4 +1,4 @@
-require('input_string')
+require('./lib/input_string')
 
 class Tester
   def initialize(string1, string2)
