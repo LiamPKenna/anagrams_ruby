@@ -19,7 +19,8 @@ class Tester
       'These are anagrams' :
       (is_antigram()) ?
         'These words have no letter matches and are antigrams' :
-        "These are not anagrams but #{@match_count} letter#{(@match_count > 1)? 's' : ''} match: #{@matched_letters.join(', ')}"
+        "These are not anagrams but #{@match_count} letter#{(@match_count > 1)? 's' : ''} match:
+  #{@matched_letters.join(', ')}"
   end
 
   def is_antigram
