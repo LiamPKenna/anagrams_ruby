@@ -2,6 +2,12 @@ require('rspec')
 require('tester')
 
 describe('#Tester') do
+
+  it('should return "These are exactly the same" if the user inputs identical words') do
+    tester = Tester.new('tea', 'tea')
+    expect(tester.anagram_test).to(eq("These are exactly the same"))
+  end
+
   it('should return "These are anagrams" if two input strings are anagrams') do
     tester = Tester.new('eat', 'tea')
     expect(tester.anagram_test).to(eq("These are anagrams"))
