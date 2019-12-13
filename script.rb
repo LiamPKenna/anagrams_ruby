@@ -1,18 +1,20 @@
 #!/usr/bin/env ruby
 
-require('./lib/tester')
+
 require('./lib/ui')
 
 ui = UI.new()
+keep_going = true
 
 ui.clear
 ui.welcome
+while keep_going == true
+  ui.clear
+  input_string1 = ui.prompt('first')
+  ui.clear
+  input_string2 = ui.prompt('second')
+  ui.clear
+  ui.test_strings(input_string1, input_string2)
+  keep_going = ui.go_again
+end
 ui.clear
-puts 'Please enter the first word or phrase to be checked:'
-input_string1 = gets.chomp
-ui.clear
-puts 'Please enter the second word or phrase to be checked:'
-input_string2 = gets.chomp
-
-tester = Tester.new(input_string1, input_string2)
-puts tester.anagram_test
