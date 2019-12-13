@@ -1,10 +1,8 @@
 # _Anagrams and Antigrams_
 
-<<<<<<< HEAD
+
 #### _Command Line Application built with Ruby taking two user input strings and returning whether they are Anagrams, Antigrams, or neither, December 13th, 2019_
-=======
-#### _Command Line Application built with Ruby taking two use input strings and returning whether they are Anagrams, Antigrams, or neither, December 13th, 2019_
->>>>>>> e0bc7f98cae71745855d09453dc8ee10e60daa6a
+
 
 #### By _**Liam Kenna**_
 
