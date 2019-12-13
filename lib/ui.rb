@@ -4,6 +4,7 @@ class UI
   def initialize
     @break = make_break()
     @title = make_title()
+    @pause = make_pause()
   end
 
   def welcome
@@ -37,14 +38,18 @@ class UI
         puts @break
       end
       print("Comparing '#{string1}' & '#{string2}':")
+      puts @pause
       if tester.identical
         print('These are exactly the same')
       elsif tester.anagram_test
-        print('These are anagrams')
+        print('THESE ARE ANAGRAMS')
       elsif tester.is_antigram
-        print('These words have no letter matches and are antigrams')
+        print('These have no letter matches')
+        puts @pause
+        print('THESE ARE ANTIGRAMS')
       else
-        print('These are not anagrams')
+        print('THESE ARE NOT ANAGRAMS')
+        puts @pause
         print("However #{tester.match_count} of their letters matched:")
         print("#{tester.matched_letters.join(', ')}")
       end
@@ -59,9 +64,16 @@ class UI
   end
 
   def go_again
-    puts '  Go again? (y/n)'
+    print('Go again? (y/n)')
     puts @break
     (gets.chomp.downcase == 'y')
+  end
+
+  def make_pause
+    "
+  #{'-  ' * 19}
+
+"
   end
 
   def make_break
