@@ -3,6 +3,9 @@ class Tester
   end
 
   def anagram_test(string1, string2)
+    if (contains_non_word(string1) || contains_non_word(string2))
+      return 'Please only enter real words'
+    end
     is_anagram = clean_and_sort(string1) == clean_and_sort(string2)
     (is_anagram) ? 'These are anagrams' : 'These are not anagrams'
   end
@@ -17,4 +20,5 @@ class Tester
     trip_characters = word_array.any?{ |w| %r{(.)\1{2}}.match(w) }
     (no_vowels || trip_characters)
   end
+
 end
