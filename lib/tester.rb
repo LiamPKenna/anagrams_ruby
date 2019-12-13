@@ -20,7 +20,7 @@ class Tester
   end
 
   def is_antigram
-    @string1.clean.split('').all?{ |c| !@string2.clean.include?(c) }
+    @string1.clean.split('').none?{ |c| @string2.clean.include?(c) }
   end
 
   def matching_letters
