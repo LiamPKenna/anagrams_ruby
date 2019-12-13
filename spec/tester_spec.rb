@@ -14,6 +14,7 @@ describe('#Tester') do
 
   it('should test for the presence of non words') do
     expect(tester.contains_non_word('this is a tst')).to(eq(true))
+    expect(tester.contains_non_word('ttthis is a test')).to(eq(true))
     expect(tester.contains_non_word('this is a test')).to(eq(false))
   end
 end
