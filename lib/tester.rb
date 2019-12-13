@@ -15,7 +15,7 @@ class Tester
       'These are anagrams' :
       (is_antigram()) ?
         'These words have no letter matches and are antigrams' :
-        "These are not anagrams but have #{matching_letters()} matching letters"
+        "These are not anagrams but #{matching_letters()[0]} letters match: #{matching_letters()[1].join(', ')}"
   end
 
   def is_antigram
@@ -23,6 +23,14 @@ class Tester
   end
 
   def matching_letters
-    @string1.clean.split('').keep_if{ |c| @string2.clean.include?(c) }.length
+    arr2 = @string2.clean.split('')
+    matches = []
+    @string1.clean.split('').each do |chr|
+      if arr2.include?(chr)
+        matches.push(chr)
+        arr2.slice!(arr2.index(chr))
+      end
+    end
+    [matches.length, matches]
   end
 end
