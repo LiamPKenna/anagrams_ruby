@@ -7,6 +7,11 @@ describe('#Tester') do
     expect(tester.anagram_test).to(eq("These are anagrams"))
   end
 
+  it('should ignore case') do
+    tester = Tester.new('Eat', 'Tea')
+    expect(tester.anagram_test).to(eq("These are anagrams"))
+  end
+
   it('should test if strings are antigrams') do
     tester = Tester.new('word', 'pick')
     expect(tester.is_antigram).to(eq(true))
