@@ -29,9 +29,15 @@ class UI
   end
 
   def test_strings(string1, string2)
+    tester = Tester.new(string1, string2)
+    if tester.found_palindromes.length > 0
+      puts @break
+      puts "  You entered the following palindromes:"
+      puts "  #{tester.found_palindromes.join(', ')}"
+    end
     puts @break
-    puts "  Comparing #{string1} and #{string2}:"
-    puts "  #{Tester.new(string1, string2).anagram_test}"
+    puts "  Comparing '#{string1}' & '#{string2}':"
+    puts "  #{tester.anagram_test}"
     puts @break
   end
 
