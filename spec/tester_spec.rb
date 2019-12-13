@@ -17,4 +17,9 @@ describe('#Tester') do
     expect(tester.contains_non_word('ttthis is a test')).to(eq(true))
     expect(tester.contains_non_word('this is a test')).to(eq(false))
   end
+
+  it('should test if strings are antigrams') do
+    expect(tester.is_antigram('word', 'pick')).to(eq(true))
+    expect(tester.is_antigram('word', 'door')).to(eq(false))
+  end
 end
