@@ -37,7 +37,7 @@ class UI
     end
     puts @break
     puts "  Comparing '#{string1}' & '#{string2}':"
-    puts "  #{tester.anagram_test}"
+    tester.anagram_test.each{ |line| puts "  #{line}"}
     puts @break
   end
 

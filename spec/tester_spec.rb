@@ -5,22 +5,22 @@ describe('#Tester') do
 
   it('should return "These are exactly the same" if the user inputs identical words') do
     tester = Tester.new('tea', 'tea')
-    expect(tester.anagram_test).to(eq("These are exactly the same"))
+    expect(tester.anagram_test).to(eq(["These are exactly the same"]))
   end
 
   it('should return "These are anagrams" if two input strings are anagrams') do
     tester = Tester.new('eat', 'tea')
-    expect(tester.anagram_test).to(eq("These are anagrams"))
+    expect(tester.anagram_test).to(eq(["These are anagrams"]))
   end
 
   it('should return "Please only enter real words" when given non words') do
     tester = Tester.new('Welcome to the jungle', 'Pleoase come over for tea')
-    expect(tester.anagram_test).to(eq("Please only enter real words"))
+    expect(tester.anagram_test).to(eq(["Please only enter real words"]))
   end
 
   it('should ignore case') do
     tester = Tester.new('Eat', 'Tea')
-    expect(tester.anagram_test).to(eq("These are anagrams"))
+    expect(tester.anagram_test).to(eq(["These are anagrams"]))
   end
 
   it('should test if strings are antigrams') do

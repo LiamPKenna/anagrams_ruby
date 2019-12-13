@@ -10,17 +10,17 @@ class Tester
 
   def anagram_test
     if (@string1.not_words || @string2.not_words)
-      return 'Please only enter real words'
+      return ['Please only enter real words']
     end
     if (@string1.text == @string2.text)
-      return 'These are exactly the same'
+      return ['These are exactly the same']
     end
     (@string1.clean == @string2.clean) ?
-      'These are anagrams' :
+      ['These are anagrams'] :
       (is_antigram()) ?
-        'These words have no letter matches and are antigrams' :
-        "These are not anagrams but #{@match_count} letter#{(@match_count > 1)? 's' : ''} match:
-  #{@matched_letters.join(', ')}"
+        ['These words have no letter matches and are antigrams'] :
+        ["These are not anagrams but #{@match_count} letter#{(@match_count > 1)? 's' : ''} match:",
+          "#{@matched_letters.join(', ')}"]
   end
 
   def is_antigram
