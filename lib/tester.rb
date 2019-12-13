@@ -1,6 +1,7 @@
 require('./lib/input_string')
 
 class Tester
+  attr_reader(:matched_letters, :match_count)
   def initialize(string1, string2)
     @string1 = InputString.new(string1)
     @string2 = InputString.new(string2)
@@ -8,19 +9,16 @@ class Tester
     @match_count = @matched_letters.length
   end
 
+  def all_real_words
+    !(@string1.not_words || @string2.not_words)
+  end
+
   def anagram_test
-    if (@string1.not_words || @string2.not_words)
-      return ['Please only enter real words']
-    end
-    if (@string1.text == @string2.text)
-      return ['These are exactly the same']
-    end
-    (@string1.clean == @string2.clean) ?
-      ['These are anagrams'] :
-      (is_antigram()) ?
-        ['These words have no letter matches and are antigrams'] :
-        ["These are not anagrams but #{@match_count} letter#{(@match_count > 1)? 's' : ''} match:",
-          "#{@matched_letters.join(', ')}"]
+    (@string1.clean == @string2.clean) 
+  end
+
+  def identical
+    @string1.text == @string2.text
   end
 
   def is_antigram

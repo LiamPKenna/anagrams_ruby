@@ -3,24 +3,24 @@ require('tester')
 
 describe('#Tester') do
 
-  it('should return "These are exactly the same" if the user inputs identical words') do
+  it('should return true if the user inputs identical words') do
     tester = Tester.new('tea', 'tea')
-    expect(tester.anagram_test).to(eq(["These are exactly the same"]))
+    expect(tester.identical).to(eq(true))
   end
 
-  it('should return "These are anagrams" if two input strings are anagrams') do
+  it('should return true if two input strings are anagrams') do
     tester = Tester.new('eat', 'tea')
-    expect(tester.anagram_test).to(eq(["These are anagrams"]))
+    expect(tester.anagram_test).to(eq(true))
   end
 
-  it('should return "Please only enter real words" when given non words') do
+  it('should return false when given non words') do
     tester = Tester.new('Welcome to the jungle', 'Pleoase come over for tea')
-    expect(tester.anagram_test).to(eq(["Please only enter real words"]))
+    expect(tester.all_real_words).to(eq(false))
   end
 
   it('should ignore case') do
     tester = Tester.new('Eat', 'Tea')
-    expect(tester.anagram_test).to(eq(["These are anagrams"]))
+    expect(tester.anagram_test).to(eq(true))
   end
 
   it('should test if strings are antigrams') do
@@ -32,9 +32,9 @@ describe('#Tester') do
 
   it('should test for matching characters in the two strings') do
     tester = Tester.new('word', 'door')
-    expect(tester.matching_letters).to(eq(['d','o','r']))
+    expect(tester.matched_letters).to(eq(['d','o','r']))
     tester = Tester.new('door', 'word')
-    expect(tester.matching_letters).to(eq(['d','o','r']))
+    expect(tester.matched_letters).to(eq(['d','o','r']))
   end
 
 end
