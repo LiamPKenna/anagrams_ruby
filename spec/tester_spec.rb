@@ -24,11 +24,11 @@ describe('#Tester') do
     expect(tester.is_antigram).to(eq(false))
   end
 
-  it('should test for the number of matching characters in the two strings') do
+  it('should test for matching characters in the two strings') do
     tester = Tester.new('word', 'door')
-    expect(tester.matching_letters).to(eq([3,['d','o','r']]))
+    expect(tester.matching_letters).to(eq(['d','o','r']))
     tester = Tester.new('door', 'word')
-    expect(tester.matching_letters).to(eq([3,['d','o','r']]))
+    expect(tester.matching_letters).to(eq(['d','o','r']))
   end
 
 end

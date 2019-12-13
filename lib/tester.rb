@@ -5,18 +5,18 @@ class Tester
     @string1 = InputString.new(string1)
     @string2 = InputString.new(string2)
     @matched_letters = matching_letters()
+    @match_count = @matched_letters.length
   end
 
   def anagram_test
-    if (@string1.non_word || @string2.non_word)
+    if (@string1.not_words || @string2.not_words)
       return 'Please only enter real words'
     end
-    is_anagram = @string1.clean == @string2.clean
-    (is_anagram) ?
+    (@string1.clean == @string2.clean) ?
       'These are anagrams' :
       (is_antigram()) ?
         'These words have no letter matches and are antigrams' :
-        "These are not anagrams but #{@matched_letters[0]} letters match: #{@matched_letters[1].join(', ')}"
+        "These are not anagrams but #{@match_count} letter#{(@match_count > 1)? 's' : ''} match: #{@matched_letters.join(', ')}"
   end
 
   def is_antigram
@@ -32,6 +32,6 @@ class Tester
         arr2.slice!(arr2.index(chr))
       end
     end
-    [matches.length, matches]
+    matches
   end
 end

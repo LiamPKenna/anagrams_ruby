@@ -1,10 +1,10 @@
 class InputString
-  attr_reader(:string, :clean, :non_word)
+  attr_reader(:string, :clean, :not_words)
   def initialize(input_string)
     @text = input_string
     @all_words = File.open('./dict.txt').read.chomp.split(' ')
     @clean = clean_and_sort()
-    @non_word = contains_non_word()
+    @not_words = contains_non_word()
   end
 
   def clean_and_sort
