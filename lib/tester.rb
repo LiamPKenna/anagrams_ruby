@@ -12,6 +12,9 @@ class Tester
     if (@string1.not_words || @string2.not_words)
       return 'Please only enter real words'
     end
+    if (@string1.text == @string2.text)
+      return 'These are exactly the same'
+    end
     (@string1.clean == @string2.clean) ?
       'These are anagrams' :
       (is_antigram()) ?

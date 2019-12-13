@@ -1,5 +1,5 @@
 class InputString
-  attr_reader(:string, :clean, :not_words)
+  attr_reader(:text, :clean, :not_words)
   def initialize(input_string)
     @text = input_string
     @all_words = File.open('./dict.txt').read.chomp.split(' ')
