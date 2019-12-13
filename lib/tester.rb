@@ -13,6 +13,8 @@ class Tester
 
   def contains_non_word(string)
     word_array = string.downcase.split(' ').map{ |s| s.gsub(/[^a-z]/, '')}
-    word_array.any?{ |w| !/[aeiouy]+/.match(w) }
+    no_vowels = word_array.any?{ |w| !/[aeiouy]+/.match(w) }
+    trip_characters = word_array.any?{ |w| %r{(.)\1{2}}.match(w) }
+    (no_vowels || trip_characters)
   end
 end
