@@ -2,13 +2,15 @@ class Tester
   def initialize(string1, string2)
     @string1 = string1
     @string2 = string2
+    @clean_string1 = clean_and_sort(@string1)
+    @clean_string2 = clean_and_sort(@string2)
   end
 
   def anagram_test
     if (contains_non_word(@string1) || contains_non_word(@string2))
       return 'Please only enter real words'
     end
-    is_anagram = clean_and_sort(@string1) == clean_and_sort(@string2)
+    is_anagram = @clean_string1 == @clean_string2
     (is_anagram) ? 'These are anagrams' : 'These are not anagrams'
   end
 
@@ -23,4 +25,7 @@ class Tester
     (no_vowels || trip_characters)
   end
 
+  def is_antigram
+    @clean_string1.split('').all?{ |c| !@clean_string2.include?(c) }
+  end
 end

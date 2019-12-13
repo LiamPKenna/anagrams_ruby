@@ -21,10 +21,10 @@ describe('#Tester') do
     expect(tester.contains_non_word('this is a test')).to(eq(false))
   end
 
-  # it('should test if strings are antigrams') do
-  #   tester = Tester.new('word', 'pick')
-  #   expect(tester.is_antigram).to(eq(true))
-  #   tester = Tester.new('word', 'door')
-  #   expect(tester.is_antigram).to(eq(false))
-  # end
+  it('should test if strings are antigrams') do
+    tester = Tester.new('word', 'pick')
+    expect(tester.is_antigram).to(eq(true))
+    tester = Tester.new('word', 'door')
+    expect(tester.is_antigram).to(eq(false))
+  end
 end
