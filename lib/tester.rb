@@ -27,6 +27,10 @@ class Tester
     @string1.clean.split('').none?{ |c| @string2.clean.include?(c) }
   end
 
+  def found_palindromes
+    @string1.palindromes + @string2.palindromes
+  end
+
   def matching_letters
     arr2 = @string2.clean.split('')
     matches = []
