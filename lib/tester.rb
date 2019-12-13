@@ -15,12 +15,14 @@ class Tester
       'These are anagrams' :
       (is_antigram()) ?
         'These words have no letter matches and are antigrams' :
-        'These are not anagrams'
+        "These are not anagrams but have #{matching_letters()} matching letters"
   end
-
-
 
   def is_antigram
     @string1.clean.split('').all?{ |c| !@string2.clean.include?(c) }
+  end
+
+  def matching_letters
+    @string1.clean.split('').keep_if{ |c| @string2.clean.include?(c) }.length
   end
 end
