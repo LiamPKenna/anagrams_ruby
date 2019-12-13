@@ -4,6 +4,7 @@ class Tester
   def initialize(string1, string2)
     @string1 = InputString.new(string1)
     @string2 = InputString.new(string2)
+    @matched_letters = matching_letters()
   end
 
   def anagram_test
@@ -15,7 +16,7 @@ class Tester
       'These are anagrams' :
       (is_antigram()) ?
         'These words have no letter matches and are antigrams' :
-        "These are not anagrams but #{matching_letters()[0]} letters match: #{matching_letters()[1].join(', ')}"
+        "These are not anagrams but #{@matched_letters[0]} letters match: #{@matched_letters[1].join(', ')}"
   end
 
   def is_antigram
