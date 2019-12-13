@@ -15,4 +15,10 @@ describe('#Tester') do
     tester = Tester.new('word', 'door')
     expect(tester.is_antigram).to(eq(false))
   end
+
+  it('should test for the number of matching characters in the two strings') do
+    tester = Tester.new('word', 'door')
+    expect(tester.matching_letters).to(eq(3))
+  end
+
 end
