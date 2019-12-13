@@ -1,8 +1,6 @@
 require('rspec')
 require('tester')
 
-
-
 describe('#Tester') do
   it('should return "These are anagrams" if two input strings are anagrams') do
     tester = Tester.new('eat', 'tea')

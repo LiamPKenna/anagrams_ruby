@@ -1,5 +1,6 @@
 require('rspec')
 require('input_string')
+
 describe('#InputString') do
   it('should remove all non-alpha characters and sort to alphabetical order') do
     tester = InputString.new("Dcb a!@ e")
