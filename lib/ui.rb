@@ -1,3 +1,4 @@
+require('colorize')
 require('./lib/tester')
 
 class UI
@@ -11,8 +12,8 @@ class UI
     puts @break
     puts @title
     puts @break
-    puts "               Welcome to Anagram / Antigram!"
-    puts "                  (press ENTER to begin)"
+    puts "               Welcome to Anagram / Antigram!".colorize(:magenta)
+    puts "                  (press ENTER to begin)".colorize(:magenta)
     puts @break
     gets
   end
@@ -23,7 +24,7 @@ class UI
 
   def prompt(first_or_second)
     puts @break
-    puts "  Please enter the #{first_or_second} word or phrase to be checked:"
+    print("Please enter the #{first_or_second} word or phrase to be checked:")
     puts @break
     gets.chomp
   end
@@ -60,7 +61,7 @@ class UI
   end
 
   def print(text)
-    puts "  #{text}"
+    puts "  #{text}".colorize(:red)
   end
 
   def go_again
@@ -73,7 +74,7 @@ class UI
     "
   #{'-  ' * 19}
 
-"
+".colorize(:light_blue)
   end
 
   def make_break
@@ -82,7 +83,7 @@ class UI
 #{'#' * 60}
 #{'-' * 60}
 
-"
+".colorize(:cyan)
   end
 
   def make_title
@@ -101,6 +102,6 @@ class UI
       | |__| | | | | |__| ( ( | | |  ( ( | | | | |
       |______|_| |_|\\___)_|\\_|| |_|   \\_||_|_|_|_|
                           (_____|
-  "
+  ".colorize(:magenta)
   end
 end
