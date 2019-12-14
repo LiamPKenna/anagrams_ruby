@@ -1,24 +1,26 @@
 # _Anagrams and Antigrams_
 
 
-#### _Command Line Application built with Ruby taking two user input strings and returning whether they are Anagrams, Antigrams, or neither, December 13th, 2019_
+#### _Command Line Application taking two user input strings and returning whether they are Anagrams, Antigrams, or neither, December 13th, 2019_
 
 
 #### By _**Liam Kenna**_
 
 ## Description
 
-_This application takes two user input strings and returns different responses depending on whether they are anagrams, antigrams, neither, or contain non-words_
+_This application takes two user input strings and returns different responses depending on whether they are anagrams, antigrams, neither, or contain non-words._
+
+_The app will also make note of any palindromes that the user has entered_
 
 _For example:_
 
 | Input:  | Output:   |
 |---|---|
-|"Doom", "Mood"|"These are anagrams"|
-|"word", "pick"|"These words have no letter matches and are antigrams"|
+|"Doom", "Mood"|"THESE ARE ANAGRAMS"|
+|"word", "pick"|"These words have no letter matches THESE ARE ANTIGRAMS"|
 |"Doom","Mmood"|"Please only enter real words"|
 
-
+![Image of app welcome screen](https://i.imgur.com/0CMa12hl.png)
 
 ## Setup/Installation Requirements
 
@@ -40,7 +42,7 @@ _Any issues or concerns, please email liam@liamkenna.com_
 
 ## Technologies Used
 
-_Ruby, rspec, pry_
+_Ruby, rspec, pry, colorize_
 
 ### License
 
