@@ -9,11 +9,11 @@ describe('#InputString') do
 
   it('should test for the presence of non words') do
     string1 = InputString.new('this is a tst')
-    expect(string1.contains_non_word).to(eq(true))
+    expect(string1.contains_all_words).to(eq(false))
     string1 = InputString.new('ttthis is a test')
-    expect(string1.contains_non_word).to(eq(true))
+    expect(string1.contains_all_words).to(eq(false))
     string1 = InputString.new('this is a test')
-    expect(string1.contains_non_word).to(eq(false))
+    expect(string1.contains_all_words).to(eq(true))
   end
 
   it('should form an array of any input words that are palindromes') do

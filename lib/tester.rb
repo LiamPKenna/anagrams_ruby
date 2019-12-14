@@ -10,11 +10,11 @@ class Tester
   end
 
   def all_real_words
-    !(@string1.not_words || @string2.not_words)
+    @string1.all_words_real && @string2.all_words_real
   end
 
   def anagram_test
-    (@string1.clean == @string2.clean) 
+    @string1.clean == @string2.clean
   end
 
   def identical
